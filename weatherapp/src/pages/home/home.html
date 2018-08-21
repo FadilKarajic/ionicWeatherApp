@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="homePage">
+  <h2>Welcome to Ionic!</h2>
+  
+  <ion-grid *ngIf="weather">
+  <h2 class="location">{{weather.id}}</h2>
+  <h2 class="location">{{weather.name}}</h2>
+  
+ 
+    
+  </ion-grid>
+</ion-content>
