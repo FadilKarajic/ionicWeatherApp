@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
 
 import {HttpModule} from '@angular/http';
+import{IonicStorageModule} from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +27,7 @@ import {HttpModule} from '@angular/http';
   imports: [
     BrowserModule,
     HttpModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

@@ -14,5 +14,11 @@
 
 
 <ion-content padding>
-
+<form (ngSubmit)="saveForm()">
+  city
+  <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+  country
+  <ion-input [(ngModel)]="country" name="country" type="text"></ion-input>
+  <button ion-button type="submit">Save Changes</button>
+</form>
 </ion-content>

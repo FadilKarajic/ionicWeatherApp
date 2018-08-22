@@ -16,7 +16,7 @@ export class WeatherProvider {
 
   constructor(public http: Http) {
     console.log('Hello WeatherProvider Provider');
-    this.url='http://api.openweathermap.org/data/2.5/forecast?q=';
+    this.url='http://api.openweathermap.org/data/2.5/weather?q=';
   }
 
   getWeather(city,country){

@@ -5,11 +5,28 @@
 </ion-header>
 
 <ion-content padding class="homePage">
-  <h2>Welcome to Ionic!</h2>
+  
   
   <ion-grid *ngIf="weather">
-  <h2 class="location">{{weather.id}}</h2>
+  
+  city
   <h2 class="location">{{weather.name}}</h2>
+  <h2 class="location">{{weather.main.temp}}</h2>
+  <h2 class="location">{{weather.weather[0].main}}</h2>
+  
+    
+  
+
+
+
+<ion-thumbnail><img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png"></ion-thumbnail>
+
+
+ 
+
+
+
+  
   
  
     
