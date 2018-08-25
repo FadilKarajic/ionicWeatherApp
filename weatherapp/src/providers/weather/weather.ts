@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 
+
 /*
   Generated class for the WeatherProvider provider.
 
@@ -20,7 +21,7 @@ export class WeatherProvider {
   }
 
   getWeather(city,country){
-    return this.http.get(this.url + city +','+country+'&appid='+this.APIKEY)
+    return this.http.get(this.url + city +','+country+'&units=imperial'+'&appid='+this.APIKEY)
     .map(res=>res.json());
   }
 }

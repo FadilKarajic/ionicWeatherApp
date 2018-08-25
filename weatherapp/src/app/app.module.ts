@@ -15,6 +15,7 @@ import { WeatherProvider } from '../providers/weather/weather';
 
 import {HttpModule} from '@angular/http';
 import{IonicStorageModule} from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,6 +28,7 @@ import{IonicStorageModule} from '@ionic/storage';
   imports: [
     BrowserModule,
     HttpModule,
+    
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],

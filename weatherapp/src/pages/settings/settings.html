@@ -7,18 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Settings Page</ion-title>
+    <ion-title>Set Your Location</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-<form (ngSubmit)="saveForm()">
-  city
-  <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
-  country
-  <ion-input [(ngModel)]="country" name="country" type="text"></ion-input>
-  <button ion-button type="submit">Save Changes</button>
-</form>
+<ion-content padding class="settingsPage">
+  <ion-col>
+    <form (ngSubmit)="saveForm()">
+      <ion-label>
+        <strong>City:</strong>
+      </ion-label>
+        <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+      <ion-label>
+        <strong>Country:</strong>
+      </ion-label>
+      <ion-input [(ngModel)]="country" name="country" type="text"></ion-input>
+      <button ion-button type="submit">Save Changes</button>
+    </form>
+  </ion-col>
 </ion-content>
+
+

@@ -3,11 +3,14 @@ import { NavController } from 'ionic-angular';
 import{WeatherProvider} from '../../providers/weather/weather';
 import { CompileStylesheetMetadata } from '../../../node_modules/@angular/compiler';
 import{Storage} from '@ionic/storage';
+import{Geolocation} from '@ionic-native/geolocation';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
+
+
 export class HomePage {
   weather:any;
   location:{
@@ -18,8 +21,16 @@ export class HomePage {
   constructor(public navCtrl: NavController,public weatherProvider: WeatherProvider,private storage:Storage) {
 
   }
+/*   this.geolocation.getCurrentPosition().then((resp) => {
+    // let lat =resp.coords.latitude
+    // let lng =resp.coords.longitude
+    
+   }).catch((error) => {
+     console.log('Error getting location', error);
+   });
+ */
 
-
+    
   ionViewWillEnter(){
     this.storage.get('location').then((val)=>{
       if (val !=null){
