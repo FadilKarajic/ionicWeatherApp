@@ -17,13 +17,17 @@
     <form (ngSubmit)="saveForm()">
       <ion-label>
         <strong>City:</strong>
-      </ion-label>
-        <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+          </ion-label>
+      <ion-item>
+        <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Enter city name..."></ion-input>
+          </ion-item>
       <ion-label>
         <strong>Country:</strong>
-      </ion-label>
-      <ion-input [(ngModel)]="country" name="country" type="text"></ion-input>
-      <button ion-button type="submit">Save Changes</button>
+          </ion-label>
+      <ion-item>
+        <ion-input [(ngModel)]="country" name="country" type="text" placeholder="Enter country name..."></ion-input>
+          </ion-item>
+      <button ion-button type="submit">Update Location</button>
     </form>
   </ion-col>
 </ion-content>

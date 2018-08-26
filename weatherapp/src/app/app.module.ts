@@ -15,6 +15,11 @@ import { WeatherProvider } from '../providers/weather/weather';
 
 import {HttpModule} from '@angular/http';
 import{IonicStorageModule} from '@ionic/storage';
+import{SocialSharing} from '@ionic-native/social-sharing';
+import { StatisticsProvider } from '../providers/statistics/statistics';
+import { InputDialogServiceProvider } from '../providers/input-dialog-service/input-dialog-service';
+import { SettingsProvider } from '../providers/settings/settings';
+
 
 @NgModule({
   declarations: [
@@ -23,13 +28,13 @@ import{IonicStorageModule} from '@ionic/storage';
     ContactPage,
     HomePage,
     TabsPage,
-    SettingsPage
+    SettingsPage,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    
-    IonicStorageModule.forRoot(),
+   
+   IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -46,7 +51,13 @@ import{IonicStorageModule} from '@ionic/storage';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
-    WeatherProvider
+    WeatherProvider,
+    SocialSharing,
+    StatisticsProvider,
+    InputDialogServiceProvider,
+    SettingsProvider,
+   
+
   ]
 })
 export class AppModule {}

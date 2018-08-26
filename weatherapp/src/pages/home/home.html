@@ -5,22 +5,41 @@
 </ion-header>
 
 <ion-content padding class="homePage">
-  <ion-grid *ngIf="weather">
+  <ion-grid *ngIf="locationInfo">
+    <ion-row> 
+        <ion-col>
+          <h2 class="nameCountry">{{locationInfo.city.name}},{{locationInfo.city.country}}</h2>
+          <ion-item><h2 class="population">Population: {{locationInfo.city.population}}</h2></ion-item>
+          <ion-item><h2 class="latitude">Latitude: {{locationInfo.city.coord.lat}}</h2></ion-item>
+          <ion-item><h2 class="longitude">Longitude: {{locationInfo.city.coord.lon}}</h2></ion-item>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="currentWeather">
     <ion-row> 
       <ion-col>
-      <h2 class="location">{{weather.name}},{{weather.sys.country}}</h2>
+          <ion-item>
       <div class ="icon">
-          <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png">
+          <img src="http://openweathermap.org/img/w/{{currentWeather.weather[0].icon}}.png">
         </div>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-item><h2 class="mainTemp">Temp: {{weather.main.temp}}°F</h2></ion-item>
-        <ion-item><h2 class="maxTemp">High: {{weather.main.temp_max}}°F</h2></ion-item>
-        <ion-item><h2 class="minTemp">Low: {{weather.main.temp_min}}°F</h2></ion-item>
-        <ion-item><h2 class="humidity">Humidity: {{weather.main.humidity}}%</h2></ion-item>
+        <ion-item><h2 class="mainTemp">Temp: {{currentWeather.main.temp}}°F</h2></ion-item>
+        <ion-item><h2 class="maxTemp">High: {{currentWeather.main.temp_max}}°F</h2></ion-item>
+        <ion-item><h2 class="minTemp">Low: {{currentWeather.main.temp_min}}°F</h2></ion-item>
+        <ion-item><h2 class="humidity">Humidity: {{currentWeather.main.humidity}}%</h2></ion-item>
       </ion-col>
     </ion-row>
-  </ion-grid>
+    <button (click)="shareWeather(currentWeather)" ion-button color="light" icon-start>
+      <ion-icon name="share"></ion-icon>
+      Share Weather
+    </button>
+  
+  <ion-fab bottom right>
+    <button (click)="changeLocation()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+</ion-fab>  
+</ion-grid>
 </ion-content>

@@ -14,14 +14,23 @@ import {Http} from '@angular/http';
 export class WeatherProvider {
   APIKEY='36efd94c3d17f17ee29ab770c1d9948c';
   url;
+ 
 
   constructor(public http: Http) {
     console.log('Hello WeatherProvider Provider');
+    //Uses "weather" call to pull the information about weather
     this.url='http://api.openweathermap.org/data/2.5/weather?q=';
+  
   }
+ 
 
-  getWeather(city,country){
+  getWeatherInfo(city,country){
     return this.http.get(this.url + city +','+country+'&units=imperial'+'&appid='+this.APIKEY)
+    
     .map(res=>res.json());
-  }
-}
+  } 
+} 
+
+
+  
+
